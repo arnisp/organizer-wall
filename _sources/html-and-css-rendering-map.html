@@ -1,0 +1,184 @@
+<div id="organizerwall">
+    <div class="orgwui-openscreen">
+        <div class="orgwui-start">
+            <div class="orgwui-startopen">
+                <h3>Open existing wall</h3>
+                <div style="display: block;" class="orgwui-wallslist">
+                    <ul>
+                        <li>
+                            <a href="#" id="demo-one" class="btn-wall-toopen">Wall 1</a>
+                        </li>
+                        <li>
+                            <a href="#" id="demo-one" class="btn-wall-toopen">Wall 2</a>
+                        </li>
+                    </ul>
+                </div>
+                <div style="display: none;" class="orgwui-openwallform">
+                    <form class="orgwui-form-openexisting" method="POST">
+                        Title:<span class="orgwui-openexisting-title">Wall 1</span><br>
+                        <input value="" type="hidden">
+                        <label>Password:</label> <input value="demo" type="password">
+                        <a href="#" data-type="submit" class="orgwui-btn-wall-open orgwui-button-text">Open wall</a>
+                    </form>
+                </div>
+            </div>
+            <div class="orgwui-startnew">
+                <h3>Create new wall</h3>
+                <div class="orgwui-createnewform">
+                    <span class="orgwui-form-createnew-error">Please enter both Title and Password</span>
+                    <form  class="orgwui-form-createnew" method="POST">
+                        <label>Title:</label> <input value="" type="text">
+                        <label>Password:</label> <input value="" type="password">
+                        <a href="#" data-type="submit" class="orgwui-btn-wall-add orgwui-button-text">Add wall</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="orgwui-wallscreen">
+        <div class="orgwui-wallhead">
+            <h1 class="orgwui-wall-title">Wall 1</h1>
+            <div class="orgwui-status-monitor orgwui-status-level-note|orgwui-status-level-warning|orgwui-status-level-error">All ready</div>
+            <div class="orgwui-wall-toolbar">
+                <a href="#" class="orgwui-btn-board-add">Add Board</a>
+                <a href="#" class="orgwui-btn-list-add">Add List</a>
+            </div>
+        </div>
+        <div class="orgwui-wall">
+            <div class="orgwui-wall-cont">
+                <div class="orgwui-board">
+                    <div class="orgwui-board-title">Board #1</div>
+                    <ul class="orgwui-list">
+                        <span class="orgwui-list-handle"></span>
+                        <h3 style=" class="orgwui-editable-title orgwui-list-title">List 1</h3>
+                        <div class="orgwui-editable-input-wrap">
+                            <input value="List 1" class="orgwui-editable-title-input" type="text">
+                            <div class="orgwui-editable-title-tools">
+                                <a href="#" class="orgwui-btn-save"></a>
+                                <a href="#" class="orgwui-btn-cancel"></a>
+                            </div>
+                        </div>
+                        <ul class="orgwui-submenu orgwui-list-submenu">
+                            <li class="orgwui-submenu-wrap">
+                                <a href="" class="orgwui-submenu-button"> </a>
+                                <ul class="orgwui-submenu-list">
+                                    <li class="orgwui-submenu-item">
+                                        <a href="" class="orgwui-submenu-button-item orgwui-submenu-button-listedit">Edit title</a>
+                                    </li>
+                                    <li class="orgwui-submenu-item">
+                                        <a href="" class="orgwui-submenu-button-item orgwui-submenu-button-listdelete">Delete list</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <div class="orgwui-card-add-block">
+                            <input value="" type="text">
+                            <a href="#" class="orgwui-btn-add">Add</a>
+                        </div>
+                        <div class="orgwui-card-add-block-toggle-block">
+                            <a href="#" class="orgwui-card-add-block-toggle">Add card</a>
+                        </div>
+                        <li class="orgwui-card orgwui-label-red|orgwui-label-orange|orgwui-label-green|orgwui-label-blue|orgwui-label-violet">
+                            <span class="orgwui-card-handle"></span>
+                            <span class="orgwui-editable-text orgwui-card-text">Card 1</span>
+                            <div class="orgwui-editable-input-wrap">
+                                <textarea class="orgwui-editable-text-input">Card 1</textarea>
+                                <div class="orgwui-editable-text-tools">
+                                    <a href="#" class="orgwui-btn-save"></a>
+                                    <a href="#" class="orgwui-btn-cancel"></a>
+                                </div>
+                            </div>
+                            <ul class="orgwui-submenu orgwui-card-submenu">
+                                <li class="orgwui-submenu-wrap">
+                                    <a href="" class="orgwui-submenu-button"> </a>
+                                    <ul class="orgwui-submenu-list">
+                                        <li class="orgwui-submenu-item">
+                                            <a href="" class="orgwui-submenu-button-item orgwui-submenu-button-cardedit">Edit card</a>
+                                        </li>
+                                        <li class="orgwui-submenu-item">
+                                            <a href="" class="orgwui-submenu-button-item orgwui-submenu-button-cardchecklist">Remove checklist|Add checklist</a>
+                                        </li>
+                                        <li class="orgwui-submenu-item">
+                                            <a href="" class="orgwui-submenu-button-item orgwui-submenu-button-carddescription">Remove description|Add description</a>
+                                        </li>
+                                        <li class="orgwui-submenu-item">
+                                            <a href="" class="orgwui-submenu-button-item orgwui-submenu-button-carddelete">Delete card</a>
+                                        </li>
+                                        <li class="orgwui-submenu-item orgwui-submenu-wrap-label">
+                                            <a href="" class="orgwui-submenu-button-item orgwui-submenu-button-labelmenu">Set Label</a>
+                                            <ul class="orgwui-submenu-list-label">
+                                                <li class="orgwui-submenu-item">
+                                                    <a href="" class="orgwui-submenu-button-item orgwui-submenu-button-setlabel orgwui-labelmark-none" rel="">None</a>
+                                                </li>
+                                                <li class="orgwui-submenu-item">
+                                                    <a href="" class="orgwui-submenu-button-item orgwui-submenu-button-setlabel orgwui-labelmark-red" rel="orgwui-label-red">Red</a>
+                                                </li>
+                                                <li class="orgwui-submenu-item">
+                                                    <a href="" class="orgwui-submenu-button-item orgwui-submenu-button-setlabel orgwui-labelmark-orange" rel="orgwui-label-orange">Orange</a>
+                                                </li>
+                                                <li class="orgwui-submenu-item">
+                                                    <a href="" class="orgwui-submenu-button-item orgwui-submenu-button-setlabel orgwui-labelmark-green" rel="orgwui-label-green">Green</a>
+                                                </li>
+                                                <li class="orgwui-submenu-item">
+                                                    <a href="" class="orgwui-submenu-button-item orgwui-submenu-button-setlabel orgwui-labelmark-blue" rel="orgwui-label-blue">Blue</a>
+                                                </li>
+                                                <li class="orgwui-submenu-item">
+                                                    <a href="" class="orgwui-submenu-button-item orgwui-submenu-button-setlabel orgwui-labelmark-violet" rel="orgwui-label-violet">Violet</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <div class="orgwui-card-tool-block">
+                                <a href="#" class="orgwui-btn-card-desc-toggle orgwui-toggle-open|orgwui-toggle-close|orgwui-toggle-add"> </a>
+                                <a href="#" class="orgwui-btn-card-checklist-toggle orgwui-toggle-open|orgwui-toggle-close|orgwui-toggle-add">
+                                    <span class="orgwui-toggle-title"> </span>
+                                    <span class="orgwui-toggle-data">(1/1)</span>
+                                </a>
+                            </div>
+                            <div class="orgwui-card-desc">
+                                <p class="orgwui-editable-text orgwui-description-text">Description text</p>
+                                <div class="orgwui-editable-input-wrap">
+                                    <textarea class="orgwui-editable-text-input">Description text</textarea>
+                                    <div class="orgwui-editable-text-tools">
+                                        <a href="#" class="orgwui-btn-save"></a>
+                                        <a href="#" class="orgwui-btn-cancel"></a>
+                                    </div>
+                                </div>
+                                <a href="" class="orgwui-btn-desc-delete">Remove description</a>
+                            </div>
+                            <div class="orgwui-card-checklist">
+                                <ul class="orgwui-checklist">
+                                    <li class="orgwui-checkbox">
+                                        <span class="orgwui-checkbox-handle"></span>
+                                        <a href="#" class="orgwui-checkbox-ticker orgwui-checkbox-unticked|orgwui-checkbox-ticked"></a>
+                                        <a href="" class="orgwui-btn-checkbox-delete"> </a>
+                                        <span class="orgwui-editable-title orgwui-checkbox-title">Checkbox 1</span>
+                                        <div class="orgwui-editable-input-wrap">
+                                            <input value="Checkbox 1" class="orgwui-editable-title-input" type="text">
+                                            <div class="orgwui-editable-title-tools">
+                                                <a href="#" class="orgwui-btn-save"></a>
+                                                <a href="#" class="orgwui-btn-cancel"></a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <div class="orgwui-checkbox-add-block">
+                                    <input value="" type="text"><a href="#" class="orgwui-btn-add">Add</a>
+                                </div>
+                                <a href="" class="orgwui-btn-checklist-delete">Remove checklist</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="orgwui-wallfooter">
+            <div class="orgwui-wall-toolbar">
+                <a href="#" class="orgwui-btn-board-add">Add Board</a>
+                <a href="#" class="orgwui-btn-list-add">Add List</a>
+            </div>
+        </div>
+    </div>
+</div>

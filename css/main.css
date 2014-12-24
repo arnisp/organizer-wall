@@ -1,0 +1,912 @@
+/**
+ * main.css
+ * Version: 1.0.0
+ *
+ * Project OrganizerWall
+ *
+ * Copyright, 2014, Arnis Puskeiris (arnisp, apbyte, arnico)
+ * Released under MIT License.
+ *
+ * License: http://opensource.org/licenses/MIT
+ * Website: http://organizerwall.arnisp.com/
+ * Github: https://github.com/arnisp/organizer-wall
+ */
+
+/* ------------------
+   Table of Contents:
+
+   1. - Global
+   2. - Start screen
+   3. - Wall screen
+   3.1. - Wall head
+   3.2. - Wall body
+   3.3. - Wall buttons
+   3.4. - Wall editable text
+   3.5. - Wall boards
+   3.6. - Wall lists
+   3.6.1. - Wall lists - card add block
+   3.7. - Wall cards
+   3.7.1. - Wall cards - labels
+   3.7.2. - Wall cards - tool block
+   3.7.3. - Wall cards - description
+   3.7.4. - Wall cards - checklist
+   3.8. - Wall submenu
+   4. - Not used elements - hide
+ */
+
+/* ------------------------------------
+   Basic parameters structure standards
+
+   Positioning
+   Display & Box Model
+   Color
+   Text
+   Other
+*/
+
+/* ---------------------
+   ----- 1. Global -----
+   --------------------- */
+
+@import "normalize.css";
+
+/* Switch to border box */
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+*:before,
+*:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+/* global styles */
+body {
+    background: #97bc52 url('../images/bggradient.png') repeat-x fixed;
+}
+body, input, textarea {
+    font: normal 13px Arial, sans-serif;
+}
+
+label{
+    display: block;
+    width: 100%;
+}
+
+input{
+    width: 100%;
+    margin: 2px 0;
+}
+
+/* ---------------------------
+   ----- 2. Start screen -----
+   --------------------------- */
+
+.orgwui-openscreen {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    top: 0;
+    left: 0;
+    display: block;
+    overflow-x: auto;
+    overflow-y: scroll;
+    width: auto;
+    height: auto;
+}
+
+.orgwui-start {
+    width: 300px;
+    margin: 50px auto 0 auto;
+}
+
+.orgwui-start h3 {
+    padding: 7px 10px 7px 10px;
+    margin: 0;
+    background: #7cbc52;
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: normal;
+}
+
+.orgwui-startopen {
+    margin-bottom: 30px;
+    background: #ffffff;
+}
+
+.orgwui-startnew {
+    background: #ffffff;
+}
+
+.orgwui-wallslist ul {
+    display: block;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+.orgwui-wallslist li {
+    display: block;
+    padding: 0;
+    border-bottom: 1px dashed #7CBC52;
+    margin: 0;
+}
+
+.orgwui-wallslist li a,
+.orgwui-wallslist li a:link,
+.orgwui-wallslist li a:visited {
+    display: block;
+    padding: 5px 7px;
+    color: #3D7FE1;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.orgwui-wallslist li a:hover,
+.orgwui-wallslist li a:active {
+    color: #7cbc52;
+}
+
+.orgwui-openexisting-title {
+    font-weight: bold;
+}
+
+.orgwui-openwallform {
+    padding: 10px;
+}
+
+.orgwui-createnewform {
+    padding: 10px;
+}
+
+.orgwui-form-createnew-error {
+    color: #dc251e;
+}
+
+@media (max-width: 767px) {
+    .orgwui-start {
+        width: 100%;
+        padding: 10px 5px;
+        margin: 0 auto 0 auto;
+    }
+    .orgwui-start h3 {
+        padding: 5px 7px 5px 7px;
+        font-size: 18px;
+    }
+    .orgwui-startopen {
+        margin-bottom: 10px;
+    }
+}
+
+.orgwui-button-text {
+    display: inline-block;
+    padding: 3px 10px 3px 6px;
+    margin: 3px;
+    background: #7cbc52;
+    color: #ffffff;
+    font: bold 13px Arial, sans-serif;
+    text-decoration: none;
+}
+
+/* --------------------------
+   ----- 3. Wall screen -----
+   -------------------------- */
+
+.orgwui-wall {
+    margin-top: 50px;
+}
+
+@media (max-width: 767px) {
+    .orgwui-wall {
+        margin-top: 0;
+    }
+}
+
+/* ----- 3.1. Wall head -----
+   -------------------------- */
+
+.orgwui-wallhead {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index:150;
+    right: 0;
+    height: 50px;
+    padding: 5px 30px;
+    background: #7cbc52;
+}
+
+.orgwui-wall-title {
+    float: left;
+    margin: 0;
+    color: #ffffff;
+    font: 30px Arial, sans-serif;
+}
+
+.orgwui-wallhead .orgwui-wall-toolbar {
+    display: block;
+    width: 230px;
+    padding-top: 10px;
+    margin: 0 auto;
+}
+
+.orgwui-wallhead .orgwui-wall-toolbar a {
+    padding: 3px 10px 3px 6px;
+    border: 1px solid #ffffff;
+    margin: 0 10px;
+    color: #ffffff;
+    font: bold 13px Arial, sans-serif;
+    text-decoration: none;
+}
+
+.orgwui-status-monitor {
+    float: right;
+    color: #ffffff;
+}
+
+.orgwui-status-level-note {
+    color: #ffffff;
+}
+
+.orgwui-status-level-warning {
+    color: #ffcc00;
+}
+
+.orgwui-status-level-error {
+    color: #dc251e;
+}
+
+.orgwui-wallfooter {
+    display: none;
+    height: 50px;
+    padding: 5px 30px;
+    background: #7cbc52;
+}
+
+.orgwui-wallfooter .orgwui-wall-toolbar {
+    display: block;
+    padding-top: 10px;
+    margin: 0 auto;
+}
+
+.orgwui-wallfooter .orgwui-wall-toolbar a {
+    padding: 3px 10px 3px 6px;
+    border: 1px solid #ffffff;
+    margin: 0 10px;
+    color: #ffffff;
+    font: bold 13px Arial, sans-serif;
+    text-decoration: none;
+}
+
+@media (max-width: 1365px) {
+    .orgwui-wallhead .orgwui-wall-toolbar {
+        float: right;
+        width: auto;
+        margin: 0 20px 0 0;
+    }
+}
+
+@media (max-width: 767px) {
+    .orgwui-wallscreen {
+        padding-bottom: 17px;
+    }
+
+    .orgwui-wallhead {
+        position: relative;
+        width: 100%;
+        height: 35px;
+        padding: 3px 15px;
+    }
+
+    .orgwui-wall-title {
+        font-size: 22px;
+    }
+
+    .orgwui-wallhead .orgwui-wall-toolbar {
+        padding-top: 5px;
+        margin: 0;
+    }
+
+    .orgwui-wallhead .orgwui-wall-toolbar a, .orgwui-wallfooter .orgwui-wall-toolbar a {
+        padding: 2px 8px 2px 4px;
+        margin: 0;
+        font-size: 12px;
+    }
+
+    .orgwui-wallhead .orgwui-btn-board-add {
+        display: none;
+    }
+
+    .orgwui-wallfooter {
+        height: 35px;
+        padding: 3px 15px;
+    }
+
+    .orgwui-wallfooter .orgwui-wall-toolbar {
+        padding-top: 5px;
+    }
+
+    .orgwui-status-monitor {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        display: block;
+        width: 100%;
+        height: 17px;
+        padding-right: 14px;
+        background: #4f9123;
+        text-align: right;
+    }
+
+    .orgwui-wallfooter {
+        display: block;
+    }
+
+    .orgwui-wallfooter .orgwui-btn-list-add {
+        display: none;
+    }
+}
+
+@media (max-width: 479px) {
+    .orgwui-wallhead {
+        position: relative;
+        width: 100%;
+        height: 28px;
+        padding: 2px 10px;
+    }
+
+    .orgwui-wall-title {
+        font-size: 16px;
+    }
+
+    .orgwui-wallhead .orgwui-wall-toolbar {
+        padding-top: 3px;
+    }
+
+    .orgwui-wallhead .orgwui-wall-toolbar a {
+        padding: 1px 6px 1px 3px;
+    }
+
+    .orgwui-wallhead .orgwui-btn-board-add {
+        display: none;
+    }
+}
+
+/* ----- 3.2. Wall body -----
+   -------------------------- */
+
+/* so that boards don't wrap and instead add horizontal scroll bar */
+.orgwui-wall-cont {
+    white-space: nowrap;
+}
+
+.orgwui-wall-cont div {
+    white-space: normal;
+}
+
+@media (max-width: 767px) {
+    /* so that boards start wraping instead of scroll bar */
+    .orgwui-wall-cont {
+        white-space: normal;
+    }
+}
+
+/* ----- 3.3. Wall buttons -----
+   ----------------------------- */
+
+.orgwui-btn-save {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    margin: 0 6px 0 0;
+    background: url("../images/icon-tick.png") no-repeat 0 -36px;
+    text-decoration: none;
+}
+
+.orgwui-btn-cancel {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    margin: 0 0 0 6px;
+    background: url("../images/icon-cross.png") no-repeat 0 -60px;
+    text-decoration: none;
+}
+
+.orgwui-btn-add {
+    float: right;
+    padding: 2px 4px;
+    margin-top: 3px;
+    background: #5cbb1b;
+    color: #fdfdfd;
+    font-size: 13px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.orgwui-btn-delete {
+    display: block;
+    width: 12px;
+    height: 12px;
+    margin-left: 3px;
+    margin-bottom: 3px;
+    background: url("../images/icon-cross.png") no-repeat 0 -24px;
+    text-decoration: none;
+}
+
+/* ----- 3.4. Wall editable text -----
+   ----------------------------------- */
+
+.orgwui-editable-input-wrap textarea {
+    width: 100%;
+}
+
+.orgwui-list .orgwui-editable-input-wrap {
+    width: 100%;
+    padding: 4px 19px 4px 15px;
+    margin: 0;
+}
+
+.orgwui-checkbox .orgwui-editable-input-wrap {
+    width: auto;
+    padding: 3px 0;
+    margin: 0 17px 0 31px;
+}
+
+.orgwui-card-desc .orgwui-editable-input-wrap {
+    padding: 0;
+    margin: 0;
+}
+
+.orgwui-editable-title-tools,
+.orgwui-editable-text-tools {
+    display: block;
+    text-align: right;
+}
+
+/* ----- 3.5. Wall boards -----
+   ---------------------------- */
+
+div.orgwui-board {
+    display: inline-block;
+    width: 340px;
+    vertical-align: top;
+    padding: 0 10px 50px 10px;
+    border-right: 1px dashed #ffffff;
+    margin-right: 5px;
+}
+
+div.orgwui-board-title {
+    display: block;
+    color: #7cbc52;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 18px;
+    text-align: center;
+}
+
+@media (max-width: 767px) {
+    div.orgwui-board {
+        display: block;
+        width: 100%;
+        border: none;
+        margin: 0;
+    }
+}
+
+/* ----- 3.6. Wall lists -----
+   --------------------------- */
+
+ul.orgwui-list {
+    position: relative;
+    display: block;
+    width: 100%;
+    padding: 0 0 5px 0;
+    margin: 5px 0 0 0;
+    background: #ffffff;
+    list-style-type: none;
+}
+
+.orgwui-list-ghost {
+    padding: 0;
+    border: 2px solid #ffffff;
+    margin: 5px 0 0 0;
+}
+
+/* jquery doesn't use border-box, so we need to remind it what is what */
+.ui-sortable-helper {
+    -webkit-box-sizing: border-box !important;
+    -moz-box-sizing: border-box !important;
+    box-sizing: border-box !important;
+}
+
+.ui-sortable-helper:before,
+.ui-sortable-helper:after {
+    -webkit-box-sizing: border-box !important;
+    -moz-box-sizing: border-box !important;
+    box-sizing: border-box !important;
+}
+
+.orgwui-list-handle {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 14px;
+    height: 26px;
+    padding: 0;
+    margin: 0;
+    background: url('../images/bghandler.png') no-repeat 2px 2px;
+    cursor: move;
+}
+
+/* margin has to be 0, bug of jquery sortable */
+.orgwui-list-title {
+    width: 100%;
+    margin: 0;
+    height: 30px;
+    padding: 4px 19px 4px 15px;
+    color: #333333;
+}
+
+/* ----- 3.6.1. Wall lists - card add block -----
+   ---------------------------------------------- */
+
+.orgwui-card-add-block {
+    display: none;
+    height: 60px;
+    padding: 2px 5px;
+}
+
+a.orgwui-card-add-block-toggle {
+    display: block;
+    padding: 6px 7px;
+    border-top: 1px dashed #cccccc;
+    border-bottom: 1px dashed #cccccc;
+    color: #295699;
+    font-size: 11px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+    text-align: center;
+}
+
+a.orgwui-card-add-block-toggle:hover,
+a.orgwui-card-add-block-toggle:active {
+    background: #eeeeee;
+    color: #7cbc52;
+}
+
+/* ----- 3.7. Wall cards -----
+   --------------------------- */
+
+li.orgwui-card {
+    position: relative;
+    width: 100%;
+    padding: 0 0 6px 0;
+    border-bottom: 1px dashed #7CBC52;
+    border-left: 2px solid #ffffff;
+    background: #ffffff;
+}
+
+.orgwui-card-ghost {
+    border: 1px solid #7CBC52;
+}
+
+.orgwui-card-handle {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 14px;
+    height: 30px;
+    background: url('../images/bghandler.png') no-repeat 0 2px;
+    cursor: move;
+}
+
+.orgwui-card-text {
+    display: block;
+    width: 100%;
+    height: auto;
+    padding: 6px 15px 0 15px;
+}
+
+.orgwui-card-text a {
+    color :#295699;
+}
+
+/* ----- 3.7.1. Wall cards - labels -----
+   -------------------------------------- */
+
+.orgwui-label-red {
+    border-left: 2px solid #ff0000 !important;
+}
+
+.orgwui-label-orange {
+    border-left: 2px solid #ff9900 !important;
+}
+
+.orgwui-label-green {
+    border-left: 2px solid #009900 !important;
+}
+
+.orgwui-label-blue {
+    border-left: 2px solid #3333ff !important;
+}
+
+.orgwui-label-violet {
+    border-left: 2px solid #993399 !important;
+}
+
+.orgwui-labelmark-red {
+    color: #ff0000 !important;
+}
+
+.orgwui-labelmark-orange {
+    color: #ff9900 !important;
+}
+
+.orgwui-labelmark-green {
+    color: #009900 !important;
+}
+
+.orgwui-labelmark-blue {
+    color: #3333ff !important;
+}
+
+.orgwui-labelmark-violet {
+    color: #993399 !important;
+}
+
+/* ----- 3.7.2. Wall cards - tool block -----
+   ------------------------------------------ */
+
+.orgwui-card-tool-block {
+    display: block;
+    width: 100%;
+    padding: 6px 15px 0 15px;
+    text-align: left;
+}
+
+a.orgwui-btn-card-desc-toggle {
+    display: none;
+    width: 12px;
+    height: 12px;
+    margin-right: 10px;
+    background: url("../images/icon-comment.png") no-repeat 0 -24px;
+    text-decoration: none;
+}
+
+a.orgwui-btn-card-desc-toggle:hover {
+    background: url("../images/icon-comment.png") no-repeat 0 0;
+}
+
+a.orgwui-btn-card-desc-toggle.orgwui-toggle-close {
+    display: inline-block;
+    background: url("../images/icon-comment.png") no-repeat 0 -36px;
+}
+a.orgwui-btn-card-desc-toggle.orgwui-toggle-open {
+    display: inline-block;
+}
+
+a.orgwui-btn-card-checklist-toggle {
+    display: none;
+    width: auto;
+    height: 12px;
+    padding-left: 14px;
+    margin-right: 10px;
+    background: url("../images/icon-checklist.png") no-repeat 0 -24px;
+    text-decoration: none;
+}
+a.orgwui-btn-card-checklist-toggle:hover {
+    background: url("../images/icon-checklist.png") no-repeat 0 0;
+}
+
+a.orgwui-btn-card-checklist-toggle.orgwui-toggle-close {
+    display: inline-block;
+    background: url("../images/icon-checklist.png") no-repeat 0 -36px;
+}
+a.orgwui-btn-card-checklist-toggle.orgwui-toggle-open {
+    display: inline-block;
+}
+
+span.orgwui-toggle-data {
+    visibility: hidden;
+    font-size: 11px;
+    font-weight: bold;
+    line-height: 11px;
+    vertical-align: top;
+}
+
+a.orgwui-btn-card-checklist-toggle.orgwui-toggle-close span.orgwui-toggle-data{
+    visibility: visible;
+    color: #5cbb1b;
+}
+
+a.orgwui-btn-card-checklist-toggle.orgwui-toggle-open span.orgwui-toggle-data{
+    visibility: visible;
+    color: #999999;
+}
+
+a.orgwui-btn-card-checklist-toggle.orgwui-toggle-open:hover span.orgwui-toggle-data{
+    visibility: visible;
+    color: #000000;
+}
+
+/* ----- 3.7.3. Wall cards - description -----
+   ------------------------------------------- */
+
+.orgwui-card-desc {
+    padding: 5px 7px 0 7px;
+    border-top: 2px solid #eeeeee;
+}
+
+.orgwui-description-text {
+    margin: 0;
+}
+
+.orgwui-description-text a {
+    color :#295699;
+}
+
+/* ----- 3.7.4. Wall cards - checklist -----
+   ----------------------------------------- */
+
+.orgwui-card-checklist {
+    padding: 0 7px 0 0;
+    border-top: 2px solid #eeeeee;
+}
+
+.orgwui-checklist {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.orgwui-checkbox {
+    position: relative;
+    clear: both;
+    min-height: 20px;
+}
+
+.orgwui-checkbox:hover {
+    background: #eeeeee;
+}
+
+.orgwui-checkbox-ticker {
+    position: relative;
+    float: left;
+    display: block;
+    width: 12px;
+    height: 12px;
+    margin-top: 6px;
+    margin-left: 15px;
+    text-decoration: none;
+}
+
+a.orgwui-checkbox-ticked {
+    background: url("../images/icon-checkbox-tick.png") no-repeat 0 -36px;
+}
+
+a.orgwui-checkbox-unticked {
+    background: url("../images/icon-checkbox.png") no-repeat 0 0;
+}
+
+a.orgwui-checkbox-unticked:hover {
+    background: url("../images/icon-checkbox.png") no-repeat 0 -36px;
+}
+
+li.orgwui-checkbox-ticked .orgwui-checkbox-title {
+    text-decoration: line-through;
+}
+
+.orgwui-checkbox-title {
+    display: block;
+    padding: 3px 0;
+    margin: 0 17px 0 31px;
+}
+
+a.orgwui-btn-checkbox-delete {
+    float: right;
+    display: block;
+    width: 12px;
+    height: 12px;
+    margin-top: 6px;
+    margin-right: 2px;
+    background: url("../images/icon-cross.png") no-repeat 0 -24px;
+    text-decoration: none;
+}
+
+a.orgwui-btn-checkbox-delete:hover {
+    background: url("../images/icon-cross.png") no-repeat 0 0;
+}
+
+.orgwui-checkbox-handle {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 14px;
+    height: 20px;
+    background: url('../images/bghandler.png') no-repeat 2px 2px;
+    cursor: move;
+}
+
+.orgwui-checkbox-add-block {
+    height: 55px;
+    padding: 2px 5px 2px 28px;
+}
+
+/* ----- 3.8. Wall submenu -----
+   ----------------------------- */
+
+ul.orgwui-submenu,
+ul.orgwui-submenu ul {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+ul.orgwui-submenu {
+    position: absolute;
+    top: 3px;
+    right: 3px;
+}
+
+.orgwui-submenu-list {
+    position: absolute;
+    z-index: 100;
+    top: 14px;
+    right: 0;
+    display: none;
+    border: 1px solid #cccccc;
+    background: #ffffff;
+    white-space: nowrap;
+}
+
+a.orgwui-submenu-button {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    background: url("../images/icon-dropdown.png") no-repeat 0 -14px;
+    text-decoration: none;
+}
+
+a.orgwui-submenu-button:hover,
+.orgwui-submenu:hover a.orgwui-submenu-button {
+    background: url("../images/icon-dropdown.png") no-repeat 0 -42px;
+}
+
+a.orgwui-submenu-button-item {
+    display: block;
+    width: auto;
+    padding: 5px 10px;
+    color: #000000;
+    text-decoration: none;
+}
+
+a.orgwui-submenu-button-item:hover {
+    background-color: #eeeeee;
+}
+
+.orgwui-submenu-list-label {
+    position: absolute;
+    z-index: 95;
+    bottom: 0;
+    right: 0;
+    display: none;
+    border: 1px solid #cccccc;
+    background: #ffffff;
+    white-space: nowrap;
+}
+
+/* ---------------------------------------
+   ----- 4. Not used elements - hide -----
+   --------------------------------------- */
+
+/* In this design, don't use standalone delete buttons. They are covered in card menu */
+
+.orgwui-btn-desc-delete,
+.orgwui-btn-checklist-delete {
+    display: none !important;
+}

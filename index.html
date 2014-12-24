@@ -1,0 +1,93 @@
+<!doctype html>
+<!--
+* index.html
+* Version: 1.0.0
+*
+* Project OrganizerWall
+*
+ * Copyright, 2014, Arnis Puskeiris (arnisp, apbyte, arnico)
+* Released under MIT License.
+*
+* License: http://opensource.org/licenses/MIT
+* Website: http://organizerwall.arnisp.com/
+* Github: https://github.com/arnisp/organizer-wall
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<link rel="shortcut icon" href="images/favicon.ico">
+<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+<title>OrganizerWall</title>
+<link rel="stylesheet" href="css/main.css">
+<script src="js/jquery-1.11.1.min.js"></script>
+<script src="js/jquery.ui.core.min.js"></script>
+<script src="js/jquery.ui.widget.min.js"></script>
+<script src="js/jquery.ui.mouse.min.js"></script>
+<script src="js/jquery.ui.sortable.min.js"></script>
+<script src="js/jquery.ui.touch-punch.min.js"></script>
+<script src="js/organizerwall.js"></script>
+<script src="js/organizerwall.render.js"></script>
+<script src="js/organizerwall.storage.js"></script>
+<script type="text/javascript">
+
+$( document ).ready(function() {
+
+    Organizerwall.init();
+
+});
+
+</script>
+</head>
+<body>
+<div id="organizerwall">
+    <!-- First screen view -->
+    <div id="orgwo-openscreen" class="orgwui-openscreen">
+        <div class="orgwui-start">
+            <div id="orgwo-startopen" class="orgwui-startopen">
+                <h3>Open existing wall</h3>
+                <div id="orgwo-wallslist" class="orgwui-wallslist"></div>
+                <div id="orgwo-openwallform" class="orgwui-openwallform">
+                    <form name="orgwo-form-openexisting" id="orgwo-form-openexisting" class="orgwui-form-openexisting" method="POST">
+                    Title:<span id="orgwo-openexisting-title" class="orgwui-openexisting-title"></span><br>
+                    <input type="hidden" name="orgwo-existing-wall-file" id="orgwo-existing-wall-file" value="">
+                    <label for="orgwo-existing-wall-pass">Password:</label> <input type="password" name="orgwo-existing-wall-pass" id="orgwo-existing-wall-pass">
+                    <a href="#" data-type="submit" id="orgwo-btn-wall-open" class="orgwui-btn-wall-open orgwui-button-text">Open wall</a>
+                </form>
+                </div>
+            </div>
+            <div id="orgwo-startnew" class="orgwui-startnew">
+                <h3>Create new wall</h3>
+                <div id="orgwo-createnewform" class="orgwui-createnewform">
+                <span id="orgwo-form-createnew-error" class="orgwui-form-createnew-error"></span>
+                <form name="orgwo-form-createnew" id="orgwo-form-createnew" class="orgwui-form-createnew" method="POST">
+                    <label for="orgwo-new-wall-name">Title:</label> <input type="text" value="" name="orgwo-new-wall-name" id="orgwo-new-wall-name">
+                    <label for="orgwo-new-wall-pass">Password:</label> <input type="password" value="" name="orgwo-new-wall-pass" id="orgwo-new-wall-pass">
+                    <a href="#" data-type="submit" id="orgwo-btn-wall-add" class="orgwui-btn-wall-add orgwui-button-text">Add wall</a>
+                </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Opened wall view -->
+    <div id="orgwo-wallscreen" class="orgwui-wallscreen">
+        <div id="orgwo-wallhead" class="orgwui-wallhead">
+            <h1 id="orgwo-wall-title" class="orgwui-wall-title"></h1>
+            <div id="orgwo-status-monitor" class="orgwui-status-monitor"></div>
+        <div class="orgwo-wall-toolbar orgwui-wall-toolbar"><a href="#" class="orgwo-btn-board-add orgwui-btn-board-add">Add Board</a>
+        <a href="#" class="orgwo-btn-list-add orgwui-btn-list-add">Add List</a></div>
+        </div>
+        <div id="orgwo-wall" class="orgwui-wall">
+            <div id="orgwo-wall-cont" class="orgwui-wall-cont"></div>
+        </div>
+        <div id="orgwo-wallfooter" class="orgwui-wallfooter">
+            <div class="orgwo-wall-toolbar orgwui-wall-toolbar"><a href="#" class="orgwo-btn-board-add orgwui-btn-board-add">Add Board</a>
+                <a href="#" class="orgwo-btn-list-add orgwui-btn-list-add">Add List</a></div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

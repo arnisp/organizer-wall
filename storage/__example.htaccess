@@ -1,0 +1,3 @@
+Order Deny,Allow
+Allow from env=allow_download
+Deny from all
