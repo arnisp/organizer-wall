@@ -1,0 +1,2 @@
+Version 1.0.1 (2014-12-25)
+    Fixed bug in stored example wall
