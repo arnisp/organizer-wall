@@ -1,6 +1,6 @@
 /**
  * organizerwall.js
- * Version: 1.0.0
+ * Version: 1.0.1
  *
  * Project OrganizerWall
  *
@@ -270,18 +270,20 @@ var Organizerwall = {
 
     // Send status/error to visual status messenger
     setStatus: function(level,message,alertmessage) {
-        this.elw.wallStatus.removeClass (function (index, css) {
-            return (css.match (/(^|\s)orgwui-status-level-\S+/g) || []).join(' ');
-        });
-        this.elw.wallStatus.html(message);
-        if(level == 1){
-            this.elw.wallStatus.addClass('orgwui-status-level-note');
-        }else if(level == 2){
-            this.elw.wallStatus.addClass('orgwui-status-level-warning');
-        }else if(level == 3) {
-            this.elw.wallStatus.addClass('orgwui-status-level-error');
-            if (typeof alertmessage !== 'undefined'){
-                alert(alertmessage);
+        if(this.elw) {
+            this.elw.wallStatus.removeClass(function (index, css) {
+                return (css.match(/(^|\s)orgwui-status-level-\S+/g) || []).join(' ');
+            });
+            this.elw.wallStatus.html(message);
+            if (level == 1) {
+                this.elw.wallStatus.addClass('orgwui-status-level-note');
+            } else if (level == 2) {
+                this.elw.wallStatus.addClass('orgwui-status-level-warning');
+            } else if (level == 3) {
+                this.elw.wallStatus.addClass('orgwui-status-level-error');
+                if (typeof alertmessage !== 'undefined') {
+                    alert(alertmessage);
+                }
             }
         }
     },

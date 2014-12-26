@@ -1,2 +1,4 @@
+Version 1.0.2 (2014-12-26)
+    Fixed status messenger caused error when creating new wall
 Version 1.0.1 (2014-12-25)
     Fixed bug in stored example wall
